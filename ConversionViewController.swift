@@ -20,24 +20,26 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ConversionViewController loaded its view.")
         updateCelciusLabel()
     }
     
     func textField(_ textField: UITextField,
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool {
+    
         let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
         let replacementTextHasDecimalSeparator = string.range(of: ".")
-        //hasCharacter = NSCharacterSet(charactersIn:"0123456789").invertedSet
+        let AlphaSet = string.rangeOfCharacter(from: NSCharacterSet.letters)
         
-        if existingTextHasDecimalSeparator != nil,
-            replacementTextHasDecimalSeparator != nil {
+        if (existingTextHasDecimalSeparator != nil && replacementTextHasDecimalSeparator != nil) ||
+            AlphaSet != nil {
             return false
         }else {
             return true
         }
     }
-    
+        
     let numberFormatter: NumberFormatter = {
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
@@ -70,7 +72,6 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
             fahrenheitValue = nil
         }
     }
-    
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer ){
         textField.resignFirstResponder()
