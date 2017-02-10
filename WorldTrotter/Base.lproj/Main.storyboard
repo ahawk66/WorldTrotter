@@ -107,7 +107,7 @@
         <!--Website-->
         <scene sceneID="Z9m-X4-uWO">
             <objects>
-                <viewController id="1a5-Su-ihg" sceneMemberID="viewController">
+                <viewController id="1a5-Su-ihg" customClass="webViewController" customModule="WorldTrotter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MxF-0l-f4g"/>
                         <viewControllerLayoutGuide type="bottom" id="3AG-dz-Fb7"/>
@@ -115,6 +115,13 @@
                     <view key="view" contentMode="scaleToFill" id="5Iq-Jb-g4x">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BPC-fV-csG">
+                                <rect key="frame" x="37" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Website" image="MapIcon" id="yPl-Pe-OVd"/>

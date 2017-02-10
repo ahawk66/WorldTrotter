@@ -8,14 +8,15 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
     
     var mapView: MKMapView!
+    var locationManager = CLLocationManager()
     
-    
-    func mapTypeChanged(_segControl: UISegmentedControl) {
-        switch _segControl.selectedSegmentIndex {
+    func mapTypeChanged(_ segControl: UISegmentedControl) {
+        switch segControl.selectedSegmentIndex {
         case 0:
             mapView.mapType = .standard
         case 1:
@@ -29,6 +30,7 @@ class MapViewController: UIViewController {
 
     
     override func loadView() {
+        
         mapView = MKMapView()
         
         view = mapView
@@ -39,7 +41,8 @@ class MapViewController: UIViewController {
             = UIColor.white.withAlphaComponent(0.5)
         segmentedControl.selectedSegmentIndex = 0
         
-        //segmentedControl.addTarget(self, action: #selector(MapViewController.mapTypeChanged(_:)), for: .valueChanged)
+    segmentedControl.addTarget(self,action:#selector(MapViewController.mapTypeChanged(_:)),for: .valueChanged)
+            
         
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         
@@ -71,6 +74,13 @@ class MapViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+    
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        locationManager.startUpdatingLocation()
+        
         super.viewDidLoad()
         
         print("MapViewController loaded its view.")
