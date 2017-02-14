@@ -8,14 +8,16 @@
 
 import UIKit
 import MapKit
-import CoreLocation
 
-class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
+class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
+{
     
     var mapView: MKMapView!
     var locationManager = CLLocationManager()
-    
-    func mapTypeChanged(_ segControl: UISegmentedControl) {
+
+
+    func mapTypeChanged(_ segControl: UISegmentedControl)
+    {
         switch segControl.selectedSegmentIndex {
         case 0:
             mapView.mapType = .standard
@@ -32,7 +34,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     override func loadView() {
         
         mapView = MKMapView()
-        
         view = mapView
         
         let segmentedControl
@@ -41,7 +42,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             = UIColor.white.withAlphaComponent(0.5)
         segmentedControl.selectedSegmentIndex = 0
         
-    segmentedControl.addTarget(self,action:#selector(MapViewController.mapTypeChanged(_:)),for: .valueChanged)
+        segmentedControl.addTarget(self,action:#selector(MapViewController.mapTypeChanged(_:)),for: .valueChanged)
             
         
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
@@ -59,28 +60,39 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         topConstraint.isActive = true
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
-
+        
+        initLocalizationButton(segmentedControl)
+        
         }
     
-    override func viewDidAppear(_ animated: Bool) {
-        let date = Date()
-        let calender = Calendar.current
-        let hour = calender.component(.hour, from: date as Date)
+    func showLocalization(sender: UIButton!)
+    {
+        mapView.userTrackingMode = .follow
+    }
+    
+    func initLocalizationButton(_ anyView: UIView!)
+    {
+        let localizationButton = UIButton.init(type: .system)
+        localizationButton.setTitle("My Location", for: .normal)
+        localizationButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(localizationButton)
         
-        if hour > 6 || hour < 17 {
-            self.view.backgroundColor=UIColor.darkGray
-        }
+        //Constraints
         
+        let topConstraint = localizationButton.topAnchor.constraint(equalTo:anyView
+            .topAnchor, constant: 32 )
+        let leadingConstraint = localizationButton.leadingAnchor.constraint(equalTo: view.layoutMarginsGuide.leadingAnchor)
+        let trailingConstraint = localizationButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor)
+        
+        topConstraint.isActive = true
+        leadingConstraint.isActive = true
+        trailingConstraint.isActive = true
+        
+        localizationButton.addTarget(self, action: #selector(MapViewController.showLocalization(sender:)), for: .touchUpInside)
     }
 
-    override func viewDidLoad() {
-    
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestAlwaysAuthorization()
-        locationManager.startUpdatingLocation()
-        
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         print("MapViewController loaded its view.")

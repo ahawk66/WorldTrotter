@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,21 +22,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8K-Qd-8kQ">
-                                <rect key="frame" x="129.5" y="194" width="117" height="84"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8K-Qd-8kQ">
+                                <rect key="frame" x="126.5" y="210" width="124.5" height="90"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="75"/>
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degrees Celcius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prU-vX-D9T">
-                                <rect key="frame" x="101" y="286" width="174" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degrees Celcius" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="prU-vX-D9T">
+                                <rect key="frame" x="66" y="308" width="245" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" red="0.88235294117647056" green="0.34509803921568627" blue="0.16078431372549018" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degrees Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHB-2M-JMN">
-                                <rect key="frame" x="84" y="120" width="208" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Degrees Fahrenheit" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kHB-2M-JMN">
+                                <rect key="frame" x="55" y="120" width="267.5" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <color key="textColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -52,9 +53,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="2wK-D2-a7U"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTU-gP-bsK">
-                                <rect key="frame" x="148" y="157" width="80" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="is really" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTU-gP-bsK">
+                                <rect key="frame" x="137.5" y="165" width="102.5" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -65,15 +66,23 @@
                             <constraint firstItem="prU-vX-D9T" firstAttribute="centerX" secondItem="kHB-2M-JMN" secondAttribute="centerX" id="32a-aS-oc7"/>
                             <constraint firstItem="G8K-Qd-8kQ" firstAttribute="centerX" secondItem="kHB-2M-JMN" secondAttribute="centerX" id="9dR-pZ-IBp"/>
                             <constraint firstItem="G8K-Qd-8kQ" firstAttribute="top" secondItem="CTU-gP-bsK" secondAttribute="bottom" constant="8" id="EN1-Pn-pn9"/>
+                            <constraint firstItem="CTU-gP-bsK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="GQI-G7-5bd"/>
                             <constraint firstItem="kHB-2M-JMN" firstAttribute="top" secondItem="Hdf-3X-OI0" secondAttribute="bottom" constant="8" id="Iva-lq-1Tl"/>
                             <constraint firstItem="kHB-2M-JMN" firstAttribute="centerX" secondItem="Hdf-3X-OI0" secondAttribute="centerX" id="Jcb-vD-2Oc"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="prU-vX-D9T" secondAttribute="trailing" id="L1M-Mt-xzk"/>
                             <constraint firstItem="Hdf-3X-OI0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="PZc-Nu-XKm"/>
                             <constraint firstItem="prU-vX-D9T" firstAttribute="top" secondItem="G8K-Qd-8kQ" secondAttribute="bottom" constant="8" id="Tb4-z1-ADi"/>
+                            <constraint firstItem="kHB-2M-JMN" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Tya-1d-kvV"/>
+                            <constraint firstItem="G8K-Qd-8kQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="cov-C3-Fxy"/>
                             <constraint firstItem="kHB-2M-JMN" firstAttribute="top" secondItem="Hdf-3X-OI0" secondAttribute="bottom" constant="8" id="d6g-PD-3wj"/>
                             <constraint firstItem="CTU-gP-bsK" firstAttribute="centerX" secondItem="kHB-2M-JMN" secondAttribute="centerX" id="dQK-1Z-95d"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="CTU-gP-bsK" secondAttribute="trailing" id="e1q-Rp-Rkn"/>
                             <constraint firstItem="kHB-2M-JMN" firstAttribute="centerX" secondItem="Hdf-3X-OI0" secondAttribute="centerX" id="fb5-w3-dIh"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="G8K-Qd-8kQ" secondAttribute="trailing" id="gUh-Of-9ge"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="kHB-2M-JMN" secondAttribute="trailing" id="pMN-Kb-Lh5"/>
                             <constraint firstItem="Hdf-3X-OI0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tMN-QJ-grw"/>
                             <constraint firstItem="CTU-gP-bsK" firstAttribute="top" secondItem="kHB-2M-JMN" secondAttribute="bottom" constant="8" id="tfl-x9-93P"/>
+                            <constraint firstItem="prU-vX-D9T" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vnp-Cd-zrH"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="VsM-UR-w7a" appends="YES" id="vMn-U9-FRV"/>
@@ -136,6 +145,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="owH-ga-YRq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="CYN-zv-9Ei">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
