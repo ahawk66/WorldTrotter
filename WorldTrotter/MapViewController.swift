@@ -11,10 +11,12 @@ import MapKit
 
 class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate
 {
+    var pin1 = MKPointAnnotation()
+    let pin2 = MKPointAnnotation()
+    let pin3 = MKPointAnnotation()
     
     var mapView: MKMapView!
     var locationManager = CLLocationManager()
-
 
     func mapTypeChanged(_ segControl: UISegmentedControl)
     {
@@ -30,20 +32,21 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         }
     }
 
-    
     override func loadView() {
         
         mapView = MKMapView()
         view = mapView
         
+        let standardString = NSLocalizedString("Standard", comment: "Standard map view")
+        let satelliteString = NSLocalizedString("Satellite", comment: "Satellite map view")
+        let hybridString = NSLocalizedString("Hybrid", comment: "Hybrid map view")
         let segmentedControl
-            = UISegmentedControl(items: ["Standard", "Hybrid" , "Satellite"])
+            = UISegmentedControl(items: [standardString,satelliteString,hybridString])
         segmentedControl.backgroundColor
             = UIColor.white.withAlphaComponent(0.5)
         segmentedControl.selectedSegmentIndex = 0
         
-        segmentedControl.addTarget(self,action:#selector(MapViewController.mapTypeChanged(_:)),for: .valueChanged)
-            
+    segmentedControl.addTarget(self,action:#selector(MapViewController.mapTypeChanged(_:)),for: .valueChanged)
         
         segmentedControl.translatesAutoresizingMaskIntoConstraints = false
         
@@ -60,8 +63,17 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         topConstraint.isActive = true
         leadingConstraint.isActive = true
         trailingConstraint.isActive = true
-        
+ 
+        pin1.coordinate = CLLocationCoordinate2DMake(38.9072, -77.0369)
+        pin2.coordinate = CLLocationCoordinate2DMake(47.7511, -120.7401)
+        pin3.coordinate = CLLocationCoordinate2DMake(35.2271, -80.8431)
+
+        mapView.addAnnotation(pin1)
+        mapView.addAnnotation(pin2)
+        mapView.addAnnotation(pin3)
+
         initLocalizationButton(segmentedControl)
+        initPinButton(segmentedControl)
         
         }
     
@@ -90,7 +102,32 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         localizationButton.addTarget(self, action: #selector(MapViewController.showLocalization(sender:)), for: .touchUpInside)
     }
+    
+    func showPinLocations(sender: UIButton!)
+    {
+       
+    }
+    
+    func initPinButton(_ anyView: UIView!)
+    {
+        let pinButton = UIButton.init(type: .system)
+        pinButton.setTitle("Pins", for: .normal)
+        pinButton.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(pinButton)
+        
+        let topConstraint = pinButton.topAnchor.constraint(equalTo:anyView
+            .topAnchor, constant: 32 )
+        let leadingConstraint = pinButton.leadingAnchor.constraint(equalTo: anyView.leadingAnchor, constant : 200)
+        let trailingConstraint = pinButton.trailingAnchor.constraint(equalTo: anyView.trailingAnchor, constant: 20)
+        
+        topConstraint.isActive = true
+        leadingConstraint.isActive = true
+        trailingConstraint.isActive = true
 
+        pinButton.addTarget(self, action: #selector(MapViewController.showPinLocations(sender:)), for: .touchUpInside)
+        
+    }
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()

@@ -13,6 +13,7 @@
 		881F1FE41E3FAF34002A00DD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 881F1FE21E3FAF34002A00DD /* LaunchScreen.storyboard */; };
 		881F1FEF1E3FAF3A002A00DD /* WorldTrotterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F1FEE1E3FAF3A002A00DD /* WorldTrotterTests.swift */; };
 		881F1FFA1E3FAF41002A00DD /* WorldTrotterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881F1FF91E3FAF41002A00DD /* WorldTrotterUITests.swift */; };
+		FA35272D1E54C830009E5E70 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FA35272F1E54C830009E5E70 /* Localizable.strings */; };
 		FACE80901E4A7C6E00197B28 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FACE808F1E4A7C6E00197B28 /* MapKit.framework */; };
 		FACE80921E4A861D00197B28 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE80911E4A861D00197B28 /* MapViewController.swift */; };
 		FACE80941E4B938C00197B28 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE80931E4B938C00197B28 /* WebViewController.swift */; };
@@ -49,6 +50,9 @@
 		881F1FF51E3FAF3E002A00DD /* WorldTrotterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorldTrotterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		881F1FF91E3FAF41002A00DD /* WorldTrotterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTrotterUITests.swift; sourceTree = "<group>"; };
 		881F1FFB1E3FAF47002A00DD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA35272E1E54C830009E5E70 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA3527301E54C832009E5E70 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		FA3527311E54C836009E5E70 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		FACE808F1E4A7C6E00197B28 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		FACE80911E4A861D00197B28 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		FACE80931E4B938C00197B28 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 				FADCB5FA1E42489D004FBCE6 /* ConversionViewController.swift */,
 				FACE80911E4A861D00197B28 /* MapViewController.swift */,
 				881F1FDD1E3FAF2F002A00DD /* Main.storyboard */,
+				FA35272F1E54C830009E5E70 /* Localizable.strings */,
 				FACE80931E4B938C00197B28 /* WebViewController.swift */,
 				881F1FE01E3FAF32002A00DD /* Assets.xcassets */,
 				881F1FE21E3FAF34002A00DD /* LaunchScreen.storyboard */,
@@ -234,6 +239,7 @@
 			knownRegions = (
 				en,
 				Base,
+				es,
 			);
 			mainGroup = 881F1FCD1E3FAF26002A00DD;
 			productRefGroup = 881F1FD71E3FAF28002A00DD /* Products */;
@@ -253,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				881F1FE41E3FAF34002A00DD /* LaunchScreen.storyboard in Resources */,
+				FA35272D1E54C830009E5E70 /* Localizable.strings in Resources */,
 				881F1FE11E3FAF32002A00DD /* Assets.xcassets in Resources */,
 				881F1FDF1E3FAF2F002A00DD /* Main.storyboard in Resources */,
 			);
@@ -334,6 +341,16 @@
 				881F1FE31E3FAF34002A00DD /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FA35272F1E54C830009E5E70 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FA35272E1E54C830009E5E70 /* Base */,
+				FA3527301E54C832009E5E70 /* en */,
+				FA3527311E54C836009E5E70 /* es */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
